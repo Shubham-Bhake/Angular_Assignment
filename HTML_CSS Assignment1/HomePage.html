@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: left;
+      }
+
+      p1 {
+        text-align: right;
+      }
+
+      div {
+        text-align: center;
+      }
+    </style>
+    <style>
+      .vl {
+        border: 6px solid rgb(26, 0, 128);
+        height: 580px;
+        text-align: center;
+      }
+    </style>
+    <style>
+      .verticalLine {
+        border-left: 4px solid #4b42f5;
+        height: 300px;
+        position: absolute;
+        left: 50%;
+        margin-left: -3px;
+        top: 30;
+      }
+    </style>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+    <meta charset="ISO-8859-1" />
+    <title>Task 1</title>
+  </head>
+  <body class="vl">
+    <img alt="" src="images/yash.png" height="100px" width="900px" />
+
+    <div>
+      <h1>
+        <a class="active" href="">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="">Contact</a>
+      </h1>
+    </div>
+
+    <div class="verticalLine"></div>
+
+    
+      <div class="column" >
+        <h2 style="color: rgb(12, 12, 12)">News</h2>
+        <p style="color: rgb(10, 10, 10)">News1-Date</p>
+        <p style="color: rgb(10, 10, 10)">Description</p>
+        <p style="color: rgb(10, 10, 10)">News2-Date</p>
+        <p style="color: rgb(10, 10, 10)">Description</p>
+        
+      </div>
+      <div class="column" >
+        <h2 style="color: rgb(11, 10, 11)">Announcements</h2>
+        <p style="color: rgb(11, 11, 11)">Announcements1</p>
+        <p style="color: rgb(11, 11, 11)">Description</p>
+        <p style="color: rgb(11, 11, 11)">Announcements2</p>
+        <p style="color: rgb(11, 11, 11)">Description</p>
+      </div>
+    </div>
+
+    <h3 style="color: rgb(15, 15, 15)">Contact:info@yash.com</h3>
+    <h4 style="color: rgb(5, 5, 5)">@Yash Technolgies@2023 &copy;</h4>
+  </body>
+</html>
