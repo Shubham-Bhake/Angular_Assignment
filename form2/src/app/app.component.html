@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="project">ProjectName</label>
+          <input
+            type="text"
+            id="projectName"
+            name="projectName"
+            class="form-control"
+            formControlName="projectName"
+          />
+          <div class="alert alert-danger" role="alert"
+            *ngIf="!projectName.valid && (projectName.dirty || projectName.touched)">
+            <div class="alert alert-danger" *ngIf="projectName.errors.required">
+              Project Name is required, Please enter a valid one. Thank you
+            </div>
+            <div class="alert alert-danger" *ngIf="projectName.errors.invalidProjectName">
+              Project Name is should not be Test
+            </div>
+            <div class="alert alert-danger" *ngIf="projectName.errors.asyncInvalidProjectName">
+              Project Name is should not be test(async test)
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="project">Email</label>
+          <input
+            type="text"
+            id="emailId"
+            name="emailId"
+            class="form-control"
+            formControlName="emailId"
+          />
+          <div class="alert alert-danger" role="alert" *ngIf="!emailId.valid && (emailId.dirty || emailId.touched)">
+            <div class="alert alert-danger" *ngIf="emailId.errors.required || emailId.errors.email">
+              Email id is required, please enter a valid one
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="project">Project Status</label>
+          <select
+            name="projectStatus"
+            id="projectStatus"
+            class="form-control"
+            formControlName="projectDetails"
+          >
+            <option *ngFor="let status of projectStatus" [value]="status">
+              {{ status }}</option
+            >
+          </select>
+        </div>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!contactForm.valid"
+        >
+          Submit
+        </button>
+      </form>
+      <br />
+      <div class="container-fluid">
+        <pre>{{ contactForm.value | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
